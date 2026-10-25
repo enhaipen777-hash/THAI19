@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thairish Turns 19</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.7), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,.5), transparent 25%),
+        #f4d9d9;
+    color: #342528;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+/* FILM GRAIN */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    z-index: 100;
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+/* MAIN CARD */
+
+.card {
+    width: min(1100px, 94%);
+    margin: 40px auto;
+    min-height: 90vh;
+    background: #fff7f0;
+    border: 1px solid rgba(80,30,40,.15);
+    box-shadow: 0 30px 80px rgba(70,30,35,.18);
+    position: relative;
+    overflow: hidden;
+}
+
+/* DECORATIONS */
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #e9a5b5;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: .25;
+    top: -150px;
+    left: -100px;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #9c9c62;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .2;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* TOP */
+
+.top {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 55px 25px 20px;
+}
+
+.small-title {
+    letter-spacing: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #8d3d55;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(70px, 12vw, 150px);
+    line-height: .8;
+    color: #ad3159;
+    font-style: italic;
+    text-shadow: 3px 3px 0 #f2b7c4;
+}
+
+.age {
+    margin-top: 22px;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* MOVIE TITLE */
+
+.movie {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 35px auto;
+    max-width: 650px;
+}
+
+.movie-top {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    letter-spacing: 3px;
+}
+
+.movie-title {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(45px, 7vw, 80px);
+    line-height: .9;
+    margin: 8px 0;
+}
+
+.movie-title span:nth-child(1) {
+    color: #b1264d;
+}
+
+.movie-title span:nth-child(2) {
+    color: #526033;
+}
+
+.movie-title span:nth-child(3) {
+    color: #171717;
+}
+
+.movie-sub {
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+/* LETTER */
+
+.letter {
+    position: relative;
+    z-index: 3;
+    width: min(680px, 90%);
+    margin: 35px auto;
+    background: #f9e8d7;
+    padding: 38px 45px;
+    box-shadow: 7px 8px 0 rgba(128,62,73,.13);
+    transform: rotate(-1deg);
+}
+
+.letter::before {
+    content: "A LITTLE LETTER";
+    position: absolute;
+    top: -13px;
+    left: 25px;
+    background: #d45a76;
+    color: white;
+    padding: 5px 13px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.letter p {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.signature {
+    text-align: right;
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    color: #a83255;
+}
+
+/* 10 RULES */
+
+.rules {
+    position: relative;
+    z-index: 2;
+    width: min(900px, 92%);
+    margin: 60px auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.rule-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.rule {
+    background: #fff;
+    padding: 20px 12px;
+    min-height: 130px;
+    text-align: center;
+    border: 1px solid #ead6d2;
+    transition: .3s ease;
+}
+
+.rule:hover {
+    transform: translateY(-8px) rotate(2deg);
+    box-shadow: 0 15px 25px rgba(80,30,40,.12);
+}
+
+.number {
+    font-family: "DM Serif Display", serif;
+    color: #c04465;
+    font-size: 30px;
+}
+
+.rule p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* MUSIC */
+
+.music-section {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin: 70px auto;
+}
+
+.music-section h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 34px;
+}
+
+.music-section p {
+    font-size: 12px;
+    color: #72545b;
+    margin: 7px 0 20px;
+}
+
+.music-button {
+    border: none;
+    background: #b52e59;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 40px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(140,30,60,.25);
+    transition: .3s;
+}
+
+.music-button:hover {
+    transform: scale(1.06);
+    background: #8e2446;
+}
+
+.music-button.playing {
+    background: #526033;
+}
+
+/* MUSIC PLAYER */
+
+.player {
+    width: min(520px, 90%);
+    margin: 25px auto 0;
+    background: #2f2427;
+    color: white;
+    padding: 20px;
+    display: none;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.player.show {
+    display: flex;
+    animation: slideUp .6s ease;
+}
+
+.album {
+    width: 65px;
+    height: 65px;
+    background: #d45a76;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 11px;
+    text-align: center;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.song-info span {
+    font-size: 11px;
+    opacity: .7;
+}
+
+/* POLAROIDS */
+
+.polaroids {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 70px auto;
+    flex-wrap: wrap;
+}
+
+.polaroid {
+    width: 210px;
+    background: white;
+    padding: 10px 10px 35px;
+    box-shadow: 0 12px 25px rgba(50,20,20,.16);
+}
+
+.polaroid:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(4deg);
+}
+
+.photo {
+    height: 170px;
+    background:
+        linear-gradient(rgba(160,50,70,.15), rgba(160,50,70,.15)),
+        linear-gradient(135deg, #e8b8b8, #b6b58b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Serif Display", serif;
+    color: white;
+    font-size: 20px;
+}
+
+.caption {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin-top: 13px;
+    font-size: 14px;
+}
+
+/* FINAL */
+
+.final {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 20px 80px;
+}
+
+.final h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(40px, 6vw, 65px);
+    color: #ae3158;
+}
+
+.final p {
+    max-width: 600px;
+    margin: 15px auto;
+    line-height: 1.8;
+    font-family: "Playfair Display", serif;
+}
+
+/* HEARTS */
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    animation: floatUp 3s linear forwards;
+    z-index: 200;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-180px) scale(1.8);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .card {
+        margin: 15px auto;
+    }
+
+    .top {
+        padding-top: 45px;
+    }
+
+    .rule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .letter {
+        padding: 30px 25px;
+    }
+
+    .letter p {
+        font-size: 15px;
+    }
+
+    .player {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- HEADER -->
+
+    <section class="top">
+
+        <div class="small-title">
+            A Birthday Movie for
+        </div>
+
+        <div class="name">
+            Thairish
+        </div>
+
+        <div class="age">
+            Turning Nineteen • 2026
+        </div>
+
+    </section>
+
+
+   
+    <!-- LETTER -->
+
+    <section class="letter">
+
+        <p>
+            Ate Thai,
+        </p>
+
+        <p>
+            Happy 19th birthday! ♡
+        </p>
+
+        <p>
+            If your life were a romantic comedy, I hope this
+            new chapter would be the part where everything
+            starts getting a little more exciting, a little more
+            chaotic, and somehow even more memorable.
+        </p>
+
+        <p>
+            Happiest Birthday, Ate Thai! Know that you are still one of the people I value up until now. I am beyond grateful for your existence and I am and will always be proud of you. Mahal ko ikaw, Ate Thai <3. Sorry ngayon lang yung bati ko, pa-special kasi ako eh and save the best for the last. (sana gets mo theme neto)
+        </p>
+
+        <p>
+            And remember: you don't need to find a guy in
+            ten days. Just keep being the amazing, funny,
+            wonderful person that you already are.
+        </p>
+
+        <div class="signature">
+            With love,<br>
+            your lanxieeeee ♡
+        </div>
+
+    </section>
+
+
+    <!-- 10 RULES -->
+
+    <section class="rules">
+
+        <h2 class="section-title">
+            How to Be 19 in 10 Ways
+        </h2>
+
+        <div class="rule-grid">
+
+            <div class="rule">
+                <div class="number">01</div>
+                <p>Laugh loudly.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">02</div>
+                <p>Take more pictures.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">03</div>
+                <p>Say yes to adventures.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">04</div>
+                <p>Protect your peace.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">05</div>
+                <p>Romanticize your life.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">06</div>
+                <p>Don't settle.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">07</div>
+                <p>Make memories.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">08</div>
+                <p>Keep your heart soft.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">09</div>
+                <p>Be unapologetically you.</p>
+            </div>
+
+            <div class="rule">
+                <div class="number">10</div>
+                <p>Have the best year yet.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- POLAROIDS -->
+
+    <section class="polaroids">
+
+        <div class="polaroid">
+
+            <div class="photo">
+                THAIRISH ♡
+            </div>
+
+            <div class="caption">
+                Main character energy.
+            </div>
+
+        </div>
+
+        <div class="polaroid">
+
+            <div class="photo">
+                19
+            </div>
+
+            <div class="caption">
+                A new chapter begins...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="final">
+
+        <h2>
+            Happy 19th, Thairish! ♡
+        </h2>
+
+        <p>
+            Here's to another year of stories, spontaneous
+            adventures, late-night conversations, inside jokes,
+            unforgettable memories, and all the little moments
+            that make life feel like a movie.
+        </p>
+
+        <p>
+            May your 19th year be romantic, ridiculous,
+            beautiful, and completely yours.
+        </p>
+
+        <p>
+            <b>
+                Now go make this year one worth remembering.
+            </b>
+        </p>
+
+    </section>
+
+</div>
+
+</script>
+
+</body>
+</html>
